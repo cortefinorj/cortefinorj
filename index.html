@@ -239,17 +239,6 @@ section{padding:100px 5%;}
 .form-input,.form-select{background:var(--black-5);border:1px solid var(--border-w);color:var(--white);padding:11px 13px;font-family:var(--sans);font-size:.82rem;letter-spacing:1px;outline:none;transition:border-color .2s;border-radius:0;width:100%;font-weight:300;}
 .form-input:focus,.form-select:focus{border-color:var(--gold);}
 .form-select option{background:var(--black-4);}
-.professional-picker{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
-.professional-option{position:relative;width:84px;height:84px;padding:0;border:none;border-radius:50%;background:none;cursor:pointer;transition:transform .22s,filter .22s;min-width:0;}
-.professional-option:hover{transform:translateY(-2px) scale(1.02);}
-.professional-option.is-selected{transform:translateY(-2px) scale(1.04);}
-.professional-avatar{position:relative;display:block;width:84px;height:84px;border-radius:50%;overflow:hidden;border:2px solid rgba(245,241,235,.12);background:#121212;box-shadow:0 12px 26px rgba(0,0,0,.24);transition:border-color .22s,box-shadow .22s;}
-.professional-avatar img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.08);}
-.professional-option.is-selected .professional-avatar{border-color:rgba(255,255,255,.55);box-shadow:0 16px 34px rgba(0,0,0,.3),0 0 0 4px rgba(245,241,235,.08);}
-.professional-badge{position:absolute;right:-1px;bottom:-1px;display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--white);color:var(--black);font-family:var(--sans);font-size:.6rem;font-weight:700;opacity:0;transform:scale(.85);transition:all .22s;}
-.professional-option.is-selected .professional-badge{opacity:1;transform:scale(1);}
-.professional-meta{display:none;}
-.professional-hidden{display:none;}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
 .resumo-box{background:var(--black-5);border-left:1px solid var(--gold);padding:12px 14px;font-family:var(--sans);font-size:.78rem;color:var(--white-dim);margin:12px 0;display:none;letter-spacing:1px;}
 .btn-confirm{width:100%;padding:15px;background:var(--gold);color:var(--black);font-family:var(--display);font-size:1rem;letter-spacing:5px;border:none;cursor:pointer;margin-top:14px;transition:all .25s;font-weight:700;}
@@ -1442,7 +1431,6 @@ footer{
 @media(max-width:500px){
   .slots-grid{grid-template-columns:repeat(2,1fr);}
   .form-row{grid-template-columns:1fr;}
-  .professional-picker{grid-template-columns:1fr;}
   .hero-stats{grid-template-columns:1fr;}
   .admin-stats-grid{grid-template-columns:1fr;}
   .painel-filters{grid-template-columns:1fr;}
@@ -1803,7 +1791,6 @@ nav.scrolled { background: rgba(10,10,10,0.96); border-bottom-color: var(--borde
             <select class="form-select" id="serviceSelect">
               <option value="">Selecione...</option><option value="Corte Degradê – R$35">Corte Degradê – R$35</option><option value="Corte + Barba – R$55">Corte + Barba – R$55</option><option value="Corte Infantil – R$35">Corte Infantil – R$35</option><option value="Corte + Pigmentação – R$45">Corte + Pigmentação – R$45</option><option value="Barba – R$25">Barba – R$25</option><option value="Corte Tesoura – R$40">Corte Tesoura – R$40</option><option value="Corte + Luzes – R$80">Corte + Luzes – R$80</option><option value="Platinado – R$90">Platinado – R$90</option></select>
           </div>
-          <input type="hidden" id="professionalSelect" value="Rafael">
           <div class="resumo-box" id="resumoAgendamento"></div>
           <button class="btn-confirm" onclick="confirmBooking()">CONFIRMAR AGENDAMENTO</button>
         </div>
@@ -2071,7 +2058,6 @@ nav.scrolled { background: rgba(10,10,10,0.96); border-bottom-color: var(--borde
             <select class="form-select" id="serviceSelectM">
               <option value="">Selecione...</option><option value="Corte Degradê – R$35">Corte Degradê – R$35</option><option value="Corte + Barba – R$55">Corte + Barba – R$55</option><option value="Corte Infantil – R$35">Corte Infantil – R$35</option><option value="Corte + Pigmentação – R$45">Corte + Pigmentação – R$45</option><option value="Barba – R$25">Barba – R$25</option><option value="Corte Tesoura – R$40">Corte Tesoura – R$40</option><option value="Corte + Luzes – R$80">Corte + Luzes – R$80</option><option value="Platinado – R$90">Platinado – R$90</option></select>
           </div>
-          <input type="hidden" id="professionalSelectM" value="Rafael">
           <div class="resumo-box" id="resumoAgendamentoM"></div>
           <button class="btn-confirm" onclick="confirmBookingModal()">CONFIRMAR</button>
         </div>
@@ -2094,9 +2080,6 @@ const ADMIN_SESSION_STORAGE_KEY = 'corte_fino_admin_session_v1';
 const BOOKING_STATUS_STORAGE_KEY = 'corte_fino_booking_status_v1';
 let bookingStatuses = {};
 let adminStateLoaded = false;
-const PROFESSIONALS = [
-  { value:'Rafael', role:'Barbeiro', copy:'Corte e barba', image:'' }
-];
 const SERVICES = {
   'degrade':{name:'Corte Degradê',price:35,time:'~45 min',desc:'Degradê limpo, transição suave e acabamento alinhado.',image:'degrade.jpeg'},
   'corte-barba':{name:'Corte + Barba',price:55,time:'~60 min',desc:'Corte completo com barba modelada, navalha e finalização.',image:'corte-barba.jpeg'},
@@ -2129,26 +2112,14 @@ function openServiceDetail(key){
   if(overlay){overlay.classList.add('open');document.body.style.overflow='hidden';}
 }
 function closeDetail(){const overlay=document.getElementById('detailOverlay');if(overlay){overlay.classList.remove('open');document.body.style.overflow='';}}
-function renderProfessionalPicker(mode='main'){
-  const modal=mode==='modal';
-  const input=document.getElementById(modal?'professionalSelectM':'professionalSelect');
-  const picker=document.getElementById(modal?'professionalPickerM':'professionalPicker');
-  if(!input)return;
-  if(!input.value) input.value=PROFESSIONALS[0].value;
-  if(!picker)return;
-  picker.innerHTML=PROFESSIONALS.map(pro=>`<button type="button" class="professional-option${input.value===pro.value?' is-selected':''}" data-professional-mode="${mode}" data-professional-value="${pro.value}" title="${pro.value}"><span class="professional-avatar"><span>${pro.value.slice(0,1)}</span><span class="professional-badge">✓</span></span></button>`).join('');
+function cleanServiceLabel(value){
+  const text = String(value || '');
+  const index = text.indexOf(' | ');
+  return index >= 0 ? text.slice(0,index) : text;
 }
-function setProfessionalValue(mode='main', value=''){
-  const modal=mode==='modal';
-  const input=document.getElementById(modal?'professionalSelectM':'professionalSelect');
-  if(!input)return;
-  input.value=value;
-  renderProfessionalPicker(mode);
-  syncBookingServiceUI(mode);
-}
-function buildStoredServiceLabel(service, professional){return professional ? `${service} | Profissional: ${professional}` : service;}
-function buildBookingWhatsAppUrl({name, phone, service, professional, date, slot}){
-  const message=['Olá! Acabei de fazer um agendamento na Corte Fino.','',`Nome: ${name}`,`WhatsApp: ${phone || 'Não informado'}`,`Serviço: ${service}`,`Profissional: ${professional || PROFESSIONALS[0].value}`,`Data: ${date}`,`Horário: ${slot}`,'','Quero confirmar meu horário.'].join('\n');
+function buildStoredServiceLabel(service){return cleanServiceLabel(service);}
+function buildBookingWhatsAppUrl({name, phone, service, date, slot}){
+  const message=['Olá! Acabei de fazer um agendamento na Corte Fino.','',`Nome: ${name}`,`WhatsApp: ${phone || 'Não informado'}`,`Serviço: ${service}`,`Data: ${date}`,`Horário: ${slot}`,'','Quero confirmar meu horário.'].join('\n');
   return `https://wa.me/5563992777323?text=${encodeURIComponent(message)}`;
 }
 function getServiceMeta(serviceLabel){return Object.values(SERVICES).find(service=>String(serviceLabel||'').startsWith(service.name)) || null;}
@@ -2156,7 +2127,6 @@ function renderBookingResume(mode='main'){
   const modal=mode==='modal';
   const summary=document.getElementById(modal?'resumoAgendamentoM':'resumoAgendamento');
   const select=document.getElementById(modal?'serviceSelectM':'serviceSelect');
-  const professional=document.getElementById(modal?'professionalSelectM':'professionalSelect');
   if(!summary||!select)return;
   const date=modal?selDateM:selDate;
   const slot=modal?selSlotM:selSlot;
@@ -2199,7 +2169,16 @@ function updateAdminAccessUI(){
   if(refreshBtn) refreshBtn.style.display=ok?'inline-flex':'none';
   if(userLabel) userLabel.textContent=ok?(getAdminSession()?.user?.email || 'Painel liberado').toUpperCase():'Acesso privado';
 }
-function getBookingEntries(){return [];} 
+function getBookingEntries(){
+  const entries = [];
+  Object.keys(bookings || {}).forEach(date => {
+    Object.keys(bookings[date] || {}).forEach(slot => {
+      const item = bookings[date][slot] || {};
+      entries.push({date, slot, ...item, service:cleanServiceLabel(item.service || '')});
+    });
+  });
+  return entries;
+} 
 function renderAdminStats(){const el=document.getElementById('adminStats'); if(el) el.innerHTML='';}
 function renderAdminBookings(){const el=document.getElementById('adminBookingsList'); const count=document.getElementById('adminBookingCount'); if(count) count.textContent='0 agendamentos'; if(el) el.innerHTML='<div class="admin-empty">Nenhum agendamento encontrado.</div>';}
 function renderAdminPanel(){renderAdminStats();renderAdminBookings();}
@@ -2238,7 +2217,7 @@ function bookingsFromRows(rows){
     const slot = row.slot;
     if(!date || !slot) return;
     if(!data[date]) data[date] = {};
-    data[date][slot] = {name:row.name||'', phone:row.phone||'', service:row.service||'', createdAt:row.created_at||''};
+    data[date][slot] = {name:row.name||'', phone:row.phone||'', service:cleanServiceLabel(row.service||''), createdAt:row.created_at||''};
   });
   return data;
 }
@@ -2446,7 +2425,6 @@ async function confirmBooking(){
   const name=document.getElementById('clientName').value.trim();
   const phone=document.getElementById('clientPhone').value.trim();
   const service=document.getElementById('serviceSelect').value;
-  const professional=document.getElementById('professionalSelect')?.value || PROFESSIONALS[0].value;
   if(!name){showToast('Informe seu nome');return;}
   if(!phone){showToast('Informe seu WhatsApp');return;}
   if(!selDate||!selSlot){showToast('Selecione data e horário');return;}
@@ -2468,7 +2446,7 @@ async function confirmBooking(){
   }
 
   try {
-    const result = await reserveBooking(selDate, selSlot, {name, phone, service: buildStoredServiceLabel(service, professional)});
+    const result = await reserveBooking(selDate, selSlot, {name, phone, service: buildStoredServiceLabel(service)});
     if(!result.ok && result.conflict){
       showToast(slotUnavailableMessage(selDate, selSlot),3500);
       const pts=selDate.split('-');
@@ -2488,8 +2466,8 @@ async function confirmBooking(){
   document.getElementById('bookingSuccess').classList.add('show');
   const dt=new Date(selDate+'T12:00:00');
   const df=dt.toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'});
-  document.getElementById('successText').textContent=`${name}, horário das ${selSlot} em ${df} reservado para ${service} com ${professional}.`;
-  const waUrl=buildBookingWhatsAppUrl({name, phone, service, professional, date: selDate, slot: selSlot});
+  document.getElementById('successText').textContent=`${name}, horário das ${selSlot} em ${df} reservado para ${service}.`;
+  const waUrl=buildBookingWhatsAppUrl({name, phone, service, date: selDate, slot: selSlot});
   document.getElementById('successWA').href=waUrl;
   const pts=selDate.split('-');
   renderSlots(selDate,'slotsArea',onSlotMain,+pts[0],+pts[1]-1,+pts[2]);
@@ -2503,7 +2481,6 @@ async function confirmBookingModal(){
   const name=document.getElementById('clientNameM').value.trim();
   const phone=document.getElementById('clientPhoneM').value.trim();
   const service=document.getElementById('serviceSelectM').value;
-  const professional=document.getElementById('professionalSelectM')?.value || PROFESSIONALS[0].value;
   if(!name){showToast('Informe seu nome');return;}
   if(!phone){showToast('Informe seu WhatsApp');return;}
   if(!selDateM||!selSlotM){showToast('Selecione data e horário');return;}
@@ -2523,7 +2500,7 @@ async function confirmBookingModal(){
   }
 
   try {
-    const result = await reserveBooking(selDateM, selSlotM, {name, phone, service: buildStoredServiceLabel(service, professional)});
+    const result = await reserveBooking(selDateM, selSlotM, {name, phone, service: buildStoredServiceLabel(service)});
     if(!result.ok && result.conflict){
       showToast(slotUnavailableMessage(selDateM, selSlotM),3500);
       const pts=selDateM.split('-');
@@ -2541,8 +2518,8 @@ async function confirmBookingModal(){
   document.getElementById('bookingSuccessM').classList.add('show');
   const dt=new Date(selDateM+'T12:00:00');
   const df=dt.toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'});
-  document.getElementById('successTextM').textContent=`${name}, horário das ${selSlotM} em ${df} reservado para ${service} com ${professional}!`;
-  const waUrl=buildBookingWhatsAppUrl({name, phone, service, professional, date: selDateM, slot: selSlotM});
+  document.getElementById('successTextM').textContent=`${name}, horário das ${selSlotM} em ${df} reservado para ${service}!`;
+  const waUrl=buildBookingWhatsAppUrl({name, phone, service, date: selDateM, slot: selSlotM});
   document.getElementById('successWAM').href=waUrl;
   const pts=selDateM.split('-');
   renderSlots(selDateM,'slotsAreaM',onSlotMod,+pts[0],+pts[1]-1,+pts[2]);
@@ -2573,11 +2550,6 @@ document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',
 document.getElementById('serviceSelect').addEventListener('change',()=>syncBookingServiceUI('main'));
 document.getElementById('serviceSelectM').addEventListener('change',()=>syncBookingServiceUI('modal'));
 document.addEventListener('click',e=>{
-  const option = e.target.closest('[data-professional-value]');
-  if(option){
-    setProfessionalValue(option.dataset.professionalMode, option.dataset.professionalValue);
-    return;
-  }
   const statusButton = e.target.closest('[data-admin-status]');
   if(statusButton){
     updateBookingStatus(statusButton.dataset.adminDate, statusButton.dataset.adminSlot, statusButton.dataset.adminStatus);
@@ -2614,8 +2586,6 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 (async()=>{
   if(!isAdminAuthenticated()) clearAdminSession();
   updateAdminAccessUI();
-  renderProfessionalPicker('main');
-  renderProfessionalPicker('modal');
   await loadBookings();
   renderMain();
   renderModal();
