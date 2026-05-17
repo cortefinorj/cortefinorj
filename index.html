@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Corte Fino Barbearia</title>
-<meta name="description" content="Corte Fino. Cortes masculinos, barba, sobrancelha, pigmentação e acabamento premium.">
+<meta name="description" content="Corte Fino. Cortes masculinos, barba, sinuca e cerveja gelada.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -1530,10 +1530,6 @@ body > * { position: relative; z-index: 1; }
 nav#navbar {
   position: sticky;
   top: 0;
-  left:0;
-  right:0;
-  width:100%;
-  transform:none;
   z-index: 900;
   background: rgba(10,10,10,0.92);
   backdrop-filter: blur(16px);
@@ -1614,300 +1610,6 @@ nav.scrolled { background: rgba(10,10,10,0.96); border-bottom-color: var(--borde
   .servico-info { padding:32px 24px; }
   .servico-num { font-size:2.8rem; }
 }
-
-@media (max-width: 430px) {
-  html, body {
-    width:100%;
-    max-width:100%;
-    overflow-x:hidden;
-  }
-  body {
-    background-size:36px 36px,36px 36px,100% 100%,100% 100%,100% 100%;
-  }
-  body::before,
-  body::after {
-    display:none;
-  }
-  nav#navbar {
-    position:sticky;
-    top:0;
-    left:0;
-    right:0;
-    width:100%;
-    transform:none;
-    min-height:64px;
-    padding:0 14px;
-    border-left:0;
-    border-right:0;
-    border-radius:0;
-  }
-  .brand {
-    gap:9px;
-    min-width:0;
-  }
-  .brand-emblem {
-    width:38px;
-    height:38px;
-  }
-  .brand-text {
-    min-width:0;
-  }
-  .brand-name {
-    font-size:.92rem;
-    letter-spacing:.04em;
-    white-space:nowrap;
-  }
-  .brand-sub {
-    font-size:.44rem;
-    letter-spacing:.2em;
-  }
-  .hamburger {
-    display:flex;
-    width:38px;
-    height:38px;
-    align-items:center;
-    justify-content:center;
-    padding:0;
-  }
-  .nav-links {
-    top:64px;
-    left:10px;
-    right:10px;
-    padding:18px;
-    border-radius:0;
-    gap:14px;
-  }
-  .nav-links a,
-  .nav-cta,
-  .nav-links .nav-cta {
-    width:100%;
-    text-align:center;
-    justify-content:center;
-    font-size:.64rem;
-    letter-spacing:.18em;
-  }
-  section,
-  #servicos {
-    padding:56px 16px;
-  }
-  #hero {
-    min-height:auto;
-    padding:86px 16px 58px;
-  }
-  #hero::before {
-    font-size:3.4rem;
-    letter-spacing:.04em;
-    bottom:24px;
-  }
-  .hero-ornament {
-    width:100%;
-    margin:12px auto;
-    gap:10px;
-  }
-  .orn-icon {
-    width:30px;
-  }
-  .hero-eyebrow {
-    font-size:.54rem;
-    letter-spacing:.22em;
-    line-height:1.7;
-    margin-bottom:16px;
-  }
-  .hero-title {
-    font-size:clamp(2.85rem,15vw,3.8rem);
-    line-height:.92;
-    letter-spacing:0;
-    margin-bottom:18px;
-  }
-  .hero-sub {
-    font-size:1rem;
-    line-height:1.65;
-    max-width:31ch;
-    margin-bottom:24px;
-  }
-  .hero-actions {
-    width:100%;
-    flex-direction:column;
-    gap:10px;
-  }
-  .hero-actions .btn-gold,
-  .hero-actions .btn-outline,
-  .btn-confirm {
-    width:100%;
-    min-height:46px;
-    padding:0 16px;
-    font-size:.62rem;
-    letter-spacing:.16em;
-  }
-  .section-title {
-    font-size:2.15rem;
-    line-height:1;
-    letter-spacing:0;
-  }
-  .section-copy {
-    font-size:1rem;
-    line-height:1.65;
-  }
-  .section-eyebrow,
-  .eyebrow {
-    font-size:.52rem;
-    letter-spacing:.2em;
-    gap:9px;
-  }
-  .section-eyebrow::before,
-  .eyebrow::before,
-  .eyebrow::after {
-    width:18px;
-  }
-  .booking-grid,
-  .contato-grid,
-  .footer-grid,
-  .modal-grid,
-  .detail-inner {
-    grid-template-columns:1fr!important;
-    gap:22px!important;
-  }
-  #calendar,
-  #calendarModal,
-  .booking-form,
-  .booking-success,
-  .map-box,
-  .c-card,
-  .modal,
-  .detail-modal,
-  .admin-shell,
-  .admin-card {
-    width:100%;
-    max-width:100%;
-  }
-  .booking-form,
-  .booking-success,
-  .modal {
-    padding:22px 16px;
-  }
-  .form-row,
-  .painel-filters,
-  .admin-stats-grid {
-    grid-template-columns:1fr!important;
-  }
-  .form-input,
-  .form-select {
-    min-height:48px;
-    font-size:16px;
-  }
-  .cal-header {
-    padding:14px 12px;
-  }
-  .cal-month {
-    font-size:.82rem;
-    letter-spacing:.12em;
-  }
-  .cal-grid {
-    gap:6px;
-    padding:12px;
-  }
-  .cal-day,
-  .cal-weekday {
-    min-height:40px;
-    font-size:.78rem;
-  }
-  .slots-grid {
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:8px;
-  }
-  .slot {
-    min-height:42px;
-    font-size:.78rem;
-  }
-  .slot.slot-expired::after,
-  .slot.slot-taken:not(.slot-expired)::after {
-    font-size:.46rem;
-    letter-spacing:.08em;
-  }
-  .modal-overlay,
-  .checkout-overlay,
-  .detail-overlay {
-    padding:10px;
-    align-items:flex-start;
-    overflow-y:auto;
-  }
-  .modal,
-  .detail-modal {
-    max-height:none;
-    margin:12px 0;
-  }
-  .modal-title {
-    font-size:1.35rem;
-    letter-spacing:.12em;
-    padding-right:38px;
-  }
-  .modal-sub {
-    font-size:.65rem;
-    line-height:1.5;
-  }
-  .detail-art {
-    min-height:260px;
-    padding:0;
-  }
-  .detail-info {
-    padding:24px 18px;
-  }
-  .detail-info h3 {
-    font-size:1.8rem;
-    line-height:1;
-  }
-  .contato-title,
-  .footer-brand {
-    word-break:normal;
-    overflow-wrap:break-word;
-  }
-  .footer-grid {
-    text-align:left;
-  }
-  .floating-actions {
-    right:12px;
-    bottom:12px;
-    gap:8px;
-  }
-  .float-btn {
-    width:46px;
-    height:46px;
-  }
-  .toast {
-    left:12px;
-    right:12px;
-    bottom:70px;
-    transform:translateY(20px);
-    width:auto;
-    text-align:center;
-    font-size:.62rem;
-    line-height:1.4;
-  }
-  .toast.show {
-    transform:translateY(0);
-  }
-}
-
-@media (max-width: 375px) {
-  .brand-name {
-    font-size:.84rem;
-  }
-  .brand-sub {
-    display:none;
-  }
-  .hero-title {
-    font-size:2.8rem;
-  }
-  .servico-nome {
-    font-size:1.48rem;
-  }
-  .servico-info {
-    padding:22px 15px;
-  }
-  .slots-grid {
-    grid-template-columns:1fr 1fr;
-  }
-}
 </style>
 </head>
 <body>
@@ -1943,7 +1645,7 @@ nav.scrolled { background: rgba(10,10,10,0.96); border-bottom-color: var(--borde
   <div class="hero-ornament top"><span class="orn-line"></span><svg class="orn-icon" viewBox="0 0 40 20"><path d="M6 4 L34 16 M34 4 L6 16" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/><circle cx="10" cy="5" r="3" fill="none" stroke="#C9A84C"/><circle cx="10" cy="15" r="3" fill="none" stroke="#C9A84C"/></svg><span class="orn-line"></span></div>
   <p class="hero-eyebrow">EST. 2026 · RESENDE, RJ</p>
   <h1 class="hero-title">Arte em<br><em>Cada Corte</em></h1>
-  <p class="hero-sub">Barbearia clássica com técnicas modernas.<br>Atendimento preciso do início ao fim.</p>
+  <p class="hero-sub">Barbearia clássica com técnicas modernas.<br>Experiência premium do início ao fim.</p>
   <div class="hero-actions"><button class="btn-gold" onclick="openModal()">Agendar Agora</button><a href="#servicos" class="btn-outline">Ver Serviços</a></div>
   <div class="hero-ornament bottom"><span class="orn-line"></span><svg class="orn-icon" viewBox="0 0 40 20"><path d="M9 12 Q15 6 20 10 Q25 6 31 12" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/></svg><span class="orn-line"></span></div>
 </section>
@@ -1998,11 +1700,11 @@ nav.scrolled { background: rgba(10,10,10,0.96); border-bottom-color: var(--borde
       <p>A Corte Fino é o ponto de encontro de quem valoriza presença, cuidado e estilo em cada detalhe. Você chega para relaxar, aproveitar o ambiente e sair com o visual alinhado do jeito certo.</p>
       <p>Vibe marcante, execução precisa e atendimento direto. Sem improviso, sem correria e sem promessa vazia. Aqui cada corte é tratado como assinatura.</p>
       <div class="pills">
-        <span class="pill gold">Acabamento Premium</span>
-        <span class="pill gold">Atendimento Direto</span>
+        <span class="pill gold">Sinuca</span>
+        <span class="pill gold">Frigobar</span>
         <span class="pill">Corte Moderno</span>
         <span class="pill">Barba na Régua</span>
-        <span class="pill">Ambiente Clássico</span>
+        <span class="pill">Vibe de Estrada</span>
         <span class="pill">Cidade Alegria</span>
       </div>
       <div class="signature-strip">
@@ -2014,7 +1716,7 @@ nav.scrolled { background: rgba(10,10,10,0.96); border-bottom-color: var(--borde
         <article class="signature-card">
           <strong>02 · Atmosfera</strong>
           <h3>Ambiente com identidade</h3>
-          <p>Ambiente organizado, atendimento direto e atenção ao detalhe. Um espaço pensado para valorizar o ritual do corte.</p>
+          <p>Madeira, metal, couro, sinuca e conversa boa. Um espaço pensado para lembrar o universo clássico da barbearia.</p>
         </article>
         <article class="signature-card">
           <strong>03 · Presença</strong>
@@ -2031,12 +1733,12 @@ nav.scrolled { background: rgba(10,10,10,0.96); border-bottom-color: var(--borde
   <div class="amb-wrap">
     <div class="reveal">
       <div class="section-eyebrow">O Ambiente</div>
-      <h2 class="section-title">Mais que uma barbearia —<br>é um <em>ritual.</em></h2>
+      <h2 class="section-title">Mais que uma barbearia —<br>é um <em>território.</em></h2>
     </div>
     <div class="amb-grid">
-      <div class="amb-card reveal"><div class="amb-num">01</div><div class="amb-title">Atendimento Preciso</div><p class="amb-desc">Horário marcado, serviço bem executado e foco total no resultado que o cliente veio buscar.</p></div>
-      <div class="amb-card reveal"><div class="amb-num">02</div><div class="amb-title">Acabamento no Detalhe</div><p class="amb-desc">Contornos, barba, sobrancelha e finalização tratados com calma para entregar um visual mais alinhado.</p></div>
-      <div class="amb-card reveal"><div class="amb-num">03</div><div class="amb-title">Ambiente Clássico</div><p class="amb-desc">Identidade forte, espaço organizado e clima de barbearia para quem gosta de chegar bem e sair melhor ainda.</p></div>
+      <div class="amb-card reveal"><div class="amb-num">01</div><div class="amb-title">Mesa de Sinuca</div><p class="amb-desc">Enquanto espera ou depois do corte, cai uma sinuca no sangue. Mesa sempre pronta pra uma boa partida entre amigos.</p></div>
+      <div class="amb-card reveal"><div class="amb-num">02</div><div class="amb-title">Frigobar Gelado</div><p class="amb-desc">Cerveja sempre gelada para transformar a espera em parte da experiência. Um detalhe simples que faz o ambiente ter identidade própria.</p></div>
+      <div class="amb-card reveal"><div class="amb-num">03</div><div class="amb-title">Vibe de Estrada</div><p class="amb-desc">Ambiente com personalidade, sem exagero e sem pose. Uma estética forte para quem gosta de chegar bem e sair melhor ainda.</p></div>
     </div>
   </div>
 </section>
@@ -2048,18 +1750,16 @@ nav.scrolled { background: rgba(10,10,10,0.96); border-bottom-color: var(--borde
   <div class="container">
     <p class="eyebrow">O que oferecemos</p>
     <h2 class="section-title">Nossos <em>Serviços</em></h2>
-    <p class="section-copy">Cada serviço executado com precisão, produtos profissionais e atenção aos detalhes.</p>
+    <p class="section-copy">Cada serviço executado com precisão, Items premium e atenção aos detalhes.</p>
     <div class="servicos-list" id="servicosList">
       <article class="servico-item reveal" onclick="openServiceDetail('degrade')"><div class="servico-foto"><img src="assets/servicos/degrade.jpeg" alt="Corte Degradê" loading="lazy"></div><div class="servico-info"><span class="servico-num">01</span><h3 class="servico-nome">Corte Degradê</h3><p class="servico-desc">Degradê limpo, transição suave e acabamento alinhado.</p><div class="servico-meta"><span class="servico-preco">R$ 35,00</span><span class="servico-duracao">45 min</span></div><button class="btn-gold servico-btn" onclick="event.stopPropagation();openModal('Corte Degradê')">Agendar este serviço</button></div></article>
-      <article class="servico-item reveal" onclick="openServiceDetail('corte-barba')"><div class="servico-foto"><img src="assets/servicos/corte + barba .jpeg" alt="Corte + Barba" loading="lazy"></div><div class="servico-info"><span class="servico-num">02</span><h3 class="servico-nome">Corte + Barba</h3><p class="servico-desc">Corte completo com barba modelada, navalha e finalização.</p><div class="servico-meta"><span class="servico-preco">R$ 55,00</span><span class="servico-duracao">60 min</span></div><button class="btn-gold servico-btn" onclick="event.stopPropagation();openModal('Corte + Barba')">Agendar este serviço</button></div></article>
-      <article class="servico-item reveal" onclick="openServiceDetail('corte-barba-sobrancelha')"><div class="servico-foto"><img src="assets/servicos/corte + barba + sobrancelha .jpeg" alt="Corte + barba + sobrancelha" loading="lazy"></div><div class="servico-info"><span class="servico-num">03</span><h3 class="servico-nome">Corte + barba + sobrancelha</h3><p class="servico-desc">Corte, barba e sobrancelha alinhados em um serviço completo.</p><div class="servico-meta"><span class="servico-preco">R$ 60,00</span><span class="servico-duracao">75 min</span></div><button class="btn-gold servico-btn" onclick="event.stopPropagation();openModal('Corte + barba + sobrancelha')">Agendar este serviço</button></div></article>
-      <article class="servico-item reveal" onclick="openServiceDetail('corte-barba-pigmentacao')"><div class="servico-foto"><img src="assets/servicos/corte + barba + pigmentação.jpeg" alt="Corte + barba + pigmentação" loading="lazy"></div><div class="servico-info"><span class="servico-num">04</span><h3 class="servico-nome">Corte + barba + pigmentação</h3><p class="servico-desc">Corte e barba com pigmentação para realce e acabamento marcante.</p><div class="servico-meta"><span class="servico-preco">R$ 65,00</span><span class="servico-duracao">80 min</span></div><button class="btn-gold servico-btn" onclick="event.stopPropagation();openModal('Corte + barba + pigmentação')">Agendar este serviço</button></div></article>
-      <article class="servico-item reveal" onclick="openServiceDetail('infantil')"><div class="servico-foto"><img src="assets/servicos/infantil.jpeg" alt="Corte Infantil" loading="lazy"></div><div class="servico-info"><span class="servico-num">05</span><h3 class="servico-nome">Corte Infantil</h3><p class="servico-desc">Corte infantil com cuidado, paciência e acabamento estiloso.</p><div class="servico-meta"><span class="servico-preco">R$ 35,00</span><span class="servico-duracao">35 min</span></div><button class="btn-gold servico-btn" onclick="event.stopPropagation();openModal('Corte Infantil')">Agendar este serviço</button></div></article>
-      <article class="servico-item reveal" onclick="openServiceDetail('pigmentacao')"><div class="servico-foto"><img src="assets/servicos/coete + pigmentacao .jpeg" alt="Corte + Pigmentação" loading="lazy"></div><div class="servico-info"><span class="servico-num">06</span><h3 class="servico-nome">Corte + Pigmentação</h3><p class="servico-desc">Corte alinhado com pigmentação para realce e acabamento.</p><div class="servico-meta"><span class="servico-preco">R$ 45,00</span><span class="servico-duracao">60 min</span></div><button class="btn-gold servico-btn" onclick="event.stopPropagation();openModal('Corte + Pigmentação')">Agendar este serviço</button></div></article>
-      <article class="servico-item reveal" onclick="openServiceDetail('barba')"><div class="servico-foto"><img src="assets/servicos/barba.jpeg" alt="Barba" loading="lazy"></div><div class="servico-info"><span class="servico-num">07</span><h3 class="servico-nome">Barba</h3><p class="servico-desc">Barba desenhada, alinhada e finalizada com precisão.</p><div class="servico-meta"><span class="servico-preco">R$ 25,00</span><span class="servico-duracao">30 min</span></div><button class="btn-gold servico-btn" onclick="event.stopPropagation();openModal('Barba')">Agendar este serviço</button></div></article>
-      <article class="servico-item reveal" onclick="openServiceDetail('tesoura')"><div class="servico-foto"><img src="assets/servicos/corte tesoura.jpeg" alt="Corte Tesoura" loading="lazy"></div><div class="servico-info"><span class="servico-num">08</span><h3 class="servico-nome">Corte Tesoura</h3><p class="servico-desc">Corte na tesoura para caimento natural e acabamento clássico.</p><div class="servico-meta"><span class="servico-preco">R$ 40,00</span><span class="servico-duracao">45 min</span></div><button class="btn-gold servico-btn" onclick="event.stopPropagation();openModal('Corte Tesoura')">Agendar este serviço</button></div></article>
-      <article class="servico-item reveal" onclick="openServiceDetail('luzes')"><div class="servico-foto"><img src="assets/servicos/corte + luzes.jpeg" alt="Corte + Luzes" loading="lazy"></div><div class="servico-info"><span class="servico-num">09</span><h3 class="servico-nome">Corte + Luzes</h3><p class="servico-desc">Corte com luzes masculinas, contraste e textura.</p><div class="servico-meta"><span class="servico-preco">R$ 80,00</span><span class="servico-duracao">90 min</span></div><button class="btn-gold servico-btn" onclick="event.stopPropagation();openModal('Corte + Luzes')">Agendar este serviço</button></div></article>
-      <article class="servico-item reveal" onclick="openServiceDetail('platinado')"><div class="servico-foto"><img src="assets/servicos/platinado.jpeg" alt="Platinado" loading="lazy"></div><div class="servico-info"><span class="servico-num">10</span><h3 class="servico-nome">Platinado</h3><p class="servico-desc">Platinado masculino com controle de tom e finalização precisa.</p><div class="servico-meta"><span class="servico-preco">R$ 90,00</span><span class="servico-duracao">120 min</span></div><button class="btn-gold servico-btn" onclick="event.stopPropagation();openModal('Platinado')">Agendar este serviço</button></div></article>    
+      <article class="servico-item reveal" onclick="openServiceDetail('corte-barba')"><div class="servico-foto"><img src="assets/servicos/corte-barba.jpeg" alt="Corte + Barba" loading="lazy"></div><div class="servico-info"><span class="servico-num">02</span><h3 class="servico-nome">Corte + Barba</h3><p class="servico-desc">Corte completo com barba modelada, navalha e finalização.</p><div class="servico-meta"><span class="servico-preco">R$ 55,00</span><span class="servico-duracao">60 min</span></div><button class="btn-gold servico-btn" onclick="event.stopPropagation();openModal('Corte + Barba')">Agendar este serviço</button></div></article>
+      <article class="servico-item reveal" onclick="openServiceDetail('infantil')"><div class="servico-foto"><img src="assets/servicos/infantil.jpeg" alt="Corte Infantil" loading="lazy"></div><div class="servico-info"><span class="servico-num">03</span><h3 class="servico-nome">Corte Infantil</h3><p class="servico-desc">Corte infantil com cuidado, paciência e acabamento estiloso.</p><div class="servico-meta"><span class="servico-preco">R$ 35,00</span><span class="servico-duracao">35 min</span></div><button class="btn-gold servico-btn" onclick="event.stopPropagation();openModal('Corte Infantil')">Agendar este serviço</button></div></article>
+      <article class="servico-item reveal" onclick="openServiceDetail('pigmentacao')"><div class="servico-foto"><img src="assets/servicos/corte-pigmentacao.jpeg" alt="Corte + Pigmentação" loading="lazy"></div><div class="servico-info"><span class="servico-num">04</span><h3 class="servico-nome">Corte + Pigmentação</h3><p class="servico-desc">Corte alinhado com pigmentação para realce e acabamento.</p><div class="servico-meta"><span class="servico-preco">R$ 45,00</span><span class="servico-duracao">60 min</span></div><button class="btn-gold servico-btn" onclick="event.stopPropagation();openModal('Corte + Pigmentação')">Agendar este serviço</button></div></article>
+      <article class="servico-item reveal" onclick="openServiceDetail('barba')"><div class="servico-foto"><img src="assets/servicos/barba.jpeg" alt="Barba" loading="lazy"></div><div class="servico-info"><span class="servico-num">05</span><h3 class="servico-nome">Barba</h3><p class="servico-desc">Barba desenhada, alinhada e finalizada com precisão.</p><div class="servico-meta"><span class="servico-preco">R$ 25,00</span><span class="servico-duracao">30 min</span></div><button class="btn-gold servico-btn" onclick="event.stopPropagation();openModal('Barba')">Agendar este serviço</button></div></article>
+      <article class="servico-item reveal" onclick="openServiceDetail('tesoura')"><div class="servico-foto"><img src="assets/servicos/corte-tesoura.jpeg" alt="Corte Tesoura" loading="lazy"></div><div class="servico-info"><span class="servico-num">06</span><h3 class="servico-nome">Corte Tesoura</h3><p class="servico-desc">Corte na tesoura para caimento natural e acabamento clássico.</p><div class="servico-meta"><span class="servico-preco">R$ 40,00</span><span class="servico-duracao">45 min</span></div><button class="btn-gold servico-btn" onclick="event.stopPropagation();openModal('Corte Tesoura')">Agendar este serviço</button></div></article>
+      <article class="servico-item reveal" onclick="openServiceDetail('luzes')"><div class="servico-foto"><img src="assets/servicos/corte-luzes.jpeg" alt="Corte + Luzes" loading="lazy"></div><div class="servico-info"><span class="servico-num">07</span><h3 class="servico-nome">Corte + Luzes</h3><p class="servico-desc">Corte com luzes masculinas, contraste e textura.</p><div class="servico-meta"><span class="servico-preco">R$ 80,00</span><span class="servico-duracao">90 min</span></div><button class="btn-gold servico-btn" onclick="event.stopPropagation();openModal('Corte + Luzes')">Agendar este serviço</button></div></article>
+      <article class="servico-item reveal" onclick="openServiceDetail('platinado')"><div class="servico-foto"><img src="assets/servicos/platinado.jpeg" alt="Platinado" loading="lazy"></div><div class="servico-info"><span class="servico-num">08</span><h3 class="servico-nome">Platinado</h3><p class="servico-desc">Platinado masculino com controle de tom e finalização premium.</p><div class="servico-meta"><span class="servico-preco">R$ 90,00</span><span class="servico-duracao">120 min</span></div><button class="btn-gold servico-btn" onclick="event.stopPropagation();openModal('Platinado')">Agendar este serviço</button></div></article>
     </div>
   </div>
 </section>
@@ -2097,11 +1797,11 @@ nav.scrolled { background: rgba(10,10,10,0.96); border-bottom-color: var(--borde
           <div class="form-title">Complete o agendamento</div>
           <div class="form-row">
             <div class="form-group"><label class="form-label">Nome</label><input class="form-input" type="text" id="clientName" placeholder="Seu nome"></div>
-            <div class="form-group"><label class="form-label">WhatsApp</label><input class="form-input" type="tel" id="clientPhone" placeholder="(24) 99871-8573"></div>
+            <div class="form-group"><label class="form-label">WhatsApp</label><input class="form-input" type="tel" id="clientPhone" placeholder="(63) 99999-9999"></div>
           </div>
           <div class="form-group"><label class="form-label">Serviço</label>
             <select class="form-select" id="serviceSelect">
-              <option value="">Selecione...</option><option value="Corte Degradê – R$35">Corte Degradê – R$35</option><option value="Corte + Barba – R$55">Corte + Barba – R$55</option><option value="Corte + barba + sobrancelha – R$60">Corte + barba + sobrancelha – R$60</option><option value="Corte + barba + pigmentação – R$65">Corte + barba + pigmentação – R$65</option><option value="Corte Infantil – R$35">Corte Infantil – R$35</option><option value="Corte + Pigmentação – R$45">Corte + Pigmentação – R$45</option><option value="Barba – R$25">Barba – R$25</option><option value="Corte Tesoura – R$40">Corte Tesoura – R$40</option><option value="Corte + Luzes – R$80">Corte + Luzes – R$80</option><option value="Platinado – R$90">Platinado – R$90</option></select>
+              <option value="">Selecione...</option><option value="Corte Degradê – R$35">Corte Degradê – R$35</option><option value="Corte + Barba – R$55">Corte + Barba – R$55</option><option value="Corte Infantil – R$35">Corte Infantil – R$35</option><option value="Corte + Pigmentação – R$45">Corte + Pigmentação – R$45</option><option value="Barba – R$25">Barba – R$25</option><option value="Corte Tesoura – R$40">Corte Tesoura – R$40</option><option value="Corte + Luzes – R$80">Corte + Luzes – R$80</option><option value="Platinado – R$90">Platinado – R$90</option></select>
           </div>
           <input type="hidden" id="professionalSelect" value="Rafael">
           <div class="resumo-box" id="resumoAgendamento"></div>
@@ -2238,7 +1938,7 @@ nav.scrolled { background: rgba(10,10,10,0.96); border-bottom-color: var(--borde
         <h3 class="contato-card-title">Seu horário confirmado com mais agilidade.</h3>
         <p class="contato-card-text">Fale com a Corte Fino para tirar dúvidas, confirmar disponibilidade, alinhar seu serviço e garantir um atendimento sem espera desnecessária.</p>
       </div>
-      <div class="c-item"><div class="c-ico">📞</div><div><div class="c-label">WhatsApp</div><div class="c-value"><a href="https://wa.me/5524998718573" target="_blank" style="color:var(--white);text-decoration:none;">(24) 99871-8573</a></div></div></div>
+      <div class="c-item"><div class="c-ico">📞</div><div><div class="c-label">WhatsApp</div><div class="c-value"><a href="https://wa.me/5563992777323" target="_blank" style="color:var(--white);text-decoration:none;">(63) 99277-7323</a></div></div></div>
       <div class="c-item"><div class="c-ico">📍</div><div><div class="c-label">Endereço</div><div class="c-value">Rua das Magnólias, 298 - Cidade Alegria<br>Resende - RJ, 27525-120</div></div></div>
       <div class="c-item"><div class="c-ico">📸</div><div><div class="c-label">Instagram</div><div class="c-value"><a href="https://www.instagram.com/" target="_blank" style="color:var(--gold);text-decoration:none;">@Corte Fino</a></div></div></div>
       <table class="hor-table">
@@ -2247,7 +1947,7 @@ nav.scrolled { background: rgba(10,10,10,0.96); border-bottom-color: var(--borde
         <tr class="closed"><td>Domingo</td><td>Fechado</td></tr>
       </table>
       <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
-        <a href="https://wa.me/5524998718573?text=Olá!%20Gostaria%20de%20agendar%20na%20Corte%20Fino" target="_blank" class="btn-primary">Chamar no WhatsApp</a>
+        <a href="https://wa.me/5563992777323?text=Olá!%20Gostaria%20de%20agendar%20na%20Corte%20Fino" target="_blank" class="btn-primary">Chamar no WhatsApp</a>
         <a href="https://maps.google.com/?q=Rua+das+Magn%C3%B3lias,+298,+Cidade+Alegria,+Resende,+RJ,+27525-120" target="_blank" class="btn-outline"><span>Como Chegar</span></a>
       </div>
     </div>
@@ -2288,7 +1988,7 @@ nav.scrolled { background: rgba(10,10,10,0.96); border-bottom-color: var(--borde
         <span class="brand-mark footer-logo-mark" aria-hidden="true"><div class="brand-emblem"><svg class="emblem-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="56" fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.6"/><circle cx="60" cy="60" r="50" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/><rect x="56" y="22" width="8" height="44" rx="1" fill="none" stroke="#C9A84C" stroke-width="1"/><line x1="56" y1="30" x2="64" y2="38" stroke="#C9A84C" stroke-width="1.5" opacity="0.8"/><line x1="64" y1="30" x2="56" y2="38" stroke="#E8C96A" stroke-width="1.5" opacity="0.8"/><circle cx="60" cy="21" r="3" fill="#C9A84C" opacity="0.9"/><line x1="28" y1="36" x2="42" y2="50" stroke="#C9A84C" stroke-width="1.2" opacity="0.7"/><line x1="42" y1="36" x2="28" y2="50" stroke="#C9A84C" stroke-width="1.2" opacity="0.7"/><line x1="78" y1="36" x2="92" y2="50" stroke="#C9A84C" stroke-width="1.5" opacity="0.7"/><line x1="78" y1="50" x2="92" y2="38" stroke="#C9A84C" stroke-width="0.8" opacity="0.4"/><line x1="18" y1="70" x2="102" y2="70" stroke="#C9A84C" stroke-width="0.6" opacity="0.4"/><path d="M48 88 Q54 83 60 86 Q66 83 72 88" fill="none" stroke="#C9A84C" stroke-width="1.4" opacity="0.8"/></svg></div></span>
         <span>Corte Fino <span>BARBEARIA</span></span>
       </a>
-      <p class="footer-desc">Seu estilo começa aqui. Corte afiado, barba alinhada e acabamento feito com atenção em cada detalhe.</p>
+      <p class="footer-desc">Seu estilo começa aqui. Corte afiado, barba alinhada, cerveja gelada e sinuca esperando. É em .</p>
       <div style="margin-top:18px;font-family:var(--sans);font-size:.58rem;letter-spacing:4px;color:var(--gold);text-transform:uppercase;font-weight:400;">✦ Rua das Magnólias, 298 · Cidade Alegria · Resende/RJ · CEP 27525-120 </div>
     </div>
     <div class="footer-col">
@@ -2300,7 +2000,7 @@ nav.scrolled { background: rgba(10,10,10,0.96); border-bottom-color: var(--borde
     <div class="footer-col">
       <h4>Contato</h4>
       <ul class="footer-links">
-        <li><a href="https://wa.me/5524998718573">(24) 99871-8573</a></li>
+        <li><a href="https://wa.me/5563992777323">(63) 99277-7323</a></li>
         <li><a href="https://www.instagram.com/" target="_blank">@Corte Fino</a></li>
         <li><a href="https://maps.google.com/?q=Rua+das+Magn%C3%B3lias,+298,+Cidade+Alegria,+Resende,+RJ,+27525-120" target="_blank">Rua das Magnólias, 298</a></li><li><a href="https://maps.google.com/?q=Rua+das+Magn%C3%B3lias,+298,+Cidade+Alegria,+Resende,+RJ,+27525-120" target="_blank">Cidade Alegria · Resende/RJ</a></li><li><a href="https://maps.google.com/?q=Rua+das+Magn%C3%B3lias,+298,+Cidade+Alegria,+Resende,+RJ,+27525-120" target="_blank">CEP 27525-120</a></li>
       </ul>
@@ -2325,7 +2025,7 @@ nav.scrolled { background: rgba(10,10,10,0.96); border-bottom-color: var(--borde
       <path d="M8 13.2h3.2v3.2H8z"></path>
     </svg>
   </button>
-  <a href="https://wa.me/5524998718573?text=Olá!%20Gostaria%20de%20agendar%20na%20Corte%20Fino" target="_blank" class="float-btn wa-float" aria-label="Falar no WhatsApp">
+  <a href="https://wa.me/5563992777323?text=Olá!%20Gostaria%20de%20agendar%20na%20Corte%20Fino" target="_blank" class="float-btn wa-float" aria-label="Falar no WhatsApp">
     <span class="float-tip">Falar no WhatsApp</span>
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
@@ -2366,10 +2066,10 @@ nav.scrolled { background: rgba(10,10,10,0.96); border-bottom-color: var(--borde
         <div style="background:var(--black-4);border:1px solid var(--gold-border);padding:24px;">
           <div class="form-title" style="font-size:1.25rem;margin-bottom:16px;">Seus dados</div>
           <div class="form-group" style="margin-bottom:12px;"><label class="form-label">Nome</label><input class="form-input" type="text" id="clientNameM" placeholder="Seu nome"></div>
-          <div class="form-group" style="margin-bottom:12px;"><label class="form-label">WhatsApp</label><input class="form-input" type="tel" id="clientPhoneM" placeholder="(24) 99871-8573"></div>
+          <div class="form-group" style="margin-bottom:12px;"><label class="form-label">WhatsApp</label><input class="form-input" type="tel" id="clientPhoneM" placeholder="(63) 99999-9999"></div>
           <div class="form-group" style="margin-bottom:12px;"><label class="form-label">Serviço</label>
             <select class="form-select" id="serviceSelectM">
-              <option value="">Selecione...</option><option value="Corte Degradê – R$35">Corte Degradê – R$35</option><option value="Corte + Barba – R$55">Corte + Barba – R$55</option><option value="Corte + barba + sobrancelha – R$60">Corte + barba + sobrancelha – R$60</option><option value="Corte + barba + pigmentação – R$65">Corte + barba + pigmentação – R$65</option><option value="Corte Infantil – R$35">Corte Infantil – R$35</option><option value="Corte + Pigmentação – R$45">Corte + Pigmentação – R$45</option><option value="Barba – R$25">Barba – R$25</option><option value="Corte Tesoura – R$40">Corte Tesoura – R$40</option><option value="Corte + Luzes – R$80">Corte + Luzes – R$80</option><option value="Platinado – R$90">Platinado – R$90</option></select>
+              <option value="">Selecione...</option><option value="Corte Degradê – R$35">Corte Degradê – R$35</option><option value="Corte + Barba – R$55">Corte + Barba – R$55</option><option value="Corte Infantil – R$35">Corte Infantil – R$35</option><option value="Corte + Pigmentação – R$45">Corte + Pigmentação – R$45</option><option value="Barba – R$25">Barba – R$25</option><option value="Corte Tesoura – R$40">Corte Tesoura – R$40</option><option value="Corte + Luzes – R$80">Corte + Luzes – R$80</option><option value="Platinado – R$90">Platinado – R$90</option></select>
           </div>
           <input type="hidden" id="professionalSelectM" value="Rafael">
           <div class="resumo-box" id="resumoAgendamentoM"></div>
@@ -2399,15 +2099,13 @@ const PROFESSIONALS = [
 ];
 const SERVICES = {
   'degrade':{name:'Corte Degradê',price:35,time:'~45 min',desc:'Degradê limpo, transição suave e acabamento alinhado.',image:'degrade.jpeg'},
-  'corte-barba':{name:'Corte + Barba',price:55,time:'~60 min',desc:'Corte completo com barba modelada, navalha e finalização.',image:'corte + barba .jpeg'},
-  'corte-barba-sobrancelha':{name:'Corte + barba + sobrancelha',price:60,time:'~75 min',desc:'Corte, barba e sobrancelha alinhados em um serviço completo.',image:'corte + barba + sobrancelha .jpeg'},
-  'corte-barba-pigmentacao':{name:'Corte + barba + pigmentação',price:65,time:'~80 min',desc:'Corte e barba com pigmentação para realce e acabamento marcante.',image:'corte + barba + pigmentação.jpeg'},
+  'corte-barba':{name:'Corte + Barba',price:55,time:'~60 min',desc:'Corte completo com barba modelada, navalha e finalização.',image:'corte-barba.jpeg'},
   'infantil':{name:'Corte Infantil',price:35,time:'~35 min',desc:'Corte infantil com cuidado, paciência e acabamento estiloso.',image:'infantil.jpeg'},
-  'pigmentacao':{name:'Corte + Pigmentação',price:45,time:'~60 min',desc:'Corte alinhado com pigmentação para realce e acabamento.',image:'coete + pigmentacao .jpeg'},
+  'pigmentacao':{name:'Corte + Pigmentação',price:45,time:'~60 min',desc:'Corte alinhado com pigmentação para realce e acabamento.',image:'corte-pigmentacao.jpeg'},
   'barba':{name:'Barba',price:25,time:'~30 min',desc:'Barba desenhada, alinhada e finalizada com precisão.',image:'barba.jpeg'},
-  'tesoura':{name:'Corte Tesoura',price:40,time:'~45 min',desc:'Corte na tesoura para caimento natural e acabamento clássico.',image:'corte tesoura.jpeg'},
-  'luzes':{name:'Corte + Luzes',price:80,time:'~90 min',desc:'Corte com luzes masculinas, contraste e textura.',image:'corte + luzes.jpeg'},
-  'platinado':{name:'Platinado',price:90,time:'~120 min',desc:'Platinado masculino com controle de tom e finalização precisa.',image:'platinado.jpeg'}
+  'tesoura':{name:'Corte Tesoura',price:40,time:'~45 min',desc:'Corte na tesoura para caimento natural e acabamento clássico.',image:'corte-tesoura.jpeg'},
+  'luzes':{name:'Corte + Luzes',price:80,time:'~90 min',desc:'Corte com luzes masculinas, contraste e textura.',image:'corte-luzes.jpeg'},
+  'platinado':{name:'Platinado',price:90,time:'~120 min',desc:'Platinado masculino com controle de tom e finalização premium.',image:'platinado.jpeg'}
 };
 function formatMoney(value){return `R$ ${Number(value).toFixed(2).replace('.',',')}`;}
 function openServiceDetail(key){
@@ -2415,14 +2113,12 @@ function openServiceDetail(key){
   if(!s){ openModal(); return; }
   const imgMap = {
     degrade:'degrade.jpeg',
-    'corte-barba':'corte + barba .jpeg',
-    'corte-barba-sobrancelha':'corte + barba + sobrancelha .jpeg',
-    'corte-barba-pigmentacao':'corte + barba + pigmentação.jpeg',
+    'corte-barba':'corte-barba.jpeg',
     infantil:'infantil.jpeg',
-    pigmentacao:'coete + pigmentacao .jpeg',
+    pigmentacao:'corte-pigmentacao.jpeg',
     barba:'barba.jpeg',
-    tesoura:'corte tesoura.jpeg',
-    luzes:'corte + luzes.jpeg',
+    tesoura:'corte-tesoura.jpeg',
+    luzes:'corte-luzes.jpeg',
     platinado:'platinado.jpeg'
   };
   const art=document.getElementById('detailArt');
@@ -2453,7 +2149,7 @@ function setProfessionalValue(mode='main', value=''){
 function buildStoredServiceLabel(service, professional){return professional ? `${service} | Profissional: ${professional}` : service;}
 function buildBookingWhatsAppUrl({name, phone, service, professional, date, slot}){
   const message=['Olá! Acabei de fazer um agendamento na Corte Fino.','',`Nome: ${name}`,`WhatsApp: ${phone || 'Não informado'}`,`Serviço: ${service}`,`Profissional: ${professional || PROFESSIONALS[0].value}`,`Data: ${date}`,`Horário: ${slot}`,'','Quero confirmar meu horário.'].join('\n');
-  return `https://wa.me/5524998718573?text=${encodeURIComponent(message)}`;
+  return `https://wa.me/5563992777323?text=${encodeURIComponent(message)}`;
 }
 function getServiceMeta(serviceLabel){return Object.values(SERVICES).find(service=>String(serviceLabel||'').startsWith(service.name)) || null;}
 function renderBookingResume(mode='main'){
@@ -2503,102 +2199,17 @@ function updateAdminAccessUI(){
   if(refreshBtn) refreshBtn.style.display=ok?'inline-flex':'none';
   if(userLabel) userLabel.textContent=ok?(getAdminSession()?.user?.email || 'Painel liberado').toUpperCase():'Acesso privado';
 }
-function getBookingStatus(date, slot){
-  return bookingStatuses?.[`${date}|${slot}`] || bookingStatuses?.[date]?.[slot] || 'confirmado';
-}
-function setBookingStatusValue(date, slot, status){
-  bookingStatuses[`${date}|${slot}`] = status;
-  saveBookingStatuses();
-}
-function getBookingEntries(){
-  const entries = [];
-  Object.keys(bookings || {}).sort().forEach(date => {
-    Object.keys(bookings[date] || {}).sort().forEach(slot => {
-      const item = bookings[date][slot] || {};
-      entries.push({
-        date,
-        slot,
-        name:item.name || '',
-        phone:item.phone || '',
-        service:item.service || '',
-        createdAt:item.createdAt || '',
-        status:getBookingStatus(date, slot)
-      });
-    });
-  });
-  return entries;
-}
-function renderAdminStats(){
-  const el=document.getElementById('adminStats');
-  if(!el)return;
-  const entries=getBookingEntries();
-  const todayIso=todayStr();
-  const todayEntries=entries.filter(e=>e.date===todayIso);
-  const done=todayEntries.filter(e=>e.status==='finalizado').length;
-  const missed=todayEntries.filter(e=>e.status==='faltou').length;
-  const active=todayEntries.filter(e=>e.status==='confirmado'||e.status==='atendimento').length;
-  el.innerHTML=[
-    ['Hoje', todayEntries.length],
-    ['Confirmados', active],
-    ['Finalizados', done],
-    ['Faltaram', missed]
-  ].map(([label,value])=>`<div class="admin-stat-card"><div class="admin-stat-value">${value}</div><div class="admin-stat-label">${label}</div></div>`).join('');
-}
-function formatAdminDate(date){
-  const dt=new Date(`${date}T12:00:00`);
-  return dt.toLocaleDateString('pt-BR',{weekday:'short',day:'2-digit',month:'2-digit'});
-}
-function getFilteredBookingEntries(){
-  const scope=document.getElementById('adminBookingScope')?.value || 'all';
-  const status=document.getElementById('adminBookingStatus')?.value || 'all';
-  const query=(document.getElementById('adminBookingSearch')?.value || '').trim().toLowerCase();
-  const todayIso=todayStr();
-  return getBookingEntries().filter(entry => {
-    if(scope==='today' && entry.date!==todayIso) return false;
-    if(scope==='upcoming' && entry.date<todayIso) return false;
-    if(status!=='all' && entry.status!==status) return false;
-    if(query){
-      const haystack=`${entry.name} ${entry.phone} ${entry.service} ${entry.date} ${entry.slot}`.toLowerCase();
-      if(!haystack.includes(query)) return false;
-    }
-    return true;
-  });
-}
-function renderAdminBookings(){
-  const el=document.getElementById('adminBookingsList');
-  const count=document.getElementById('adminBookingCount');
-  if(!el)return;
-  const entries=getFilteredBookingEntries();
-  if(count) count.textContent=`${entries.length} agendamento${entries.length===1?'':'s'}`;
-  if(!entries.length){
-    el.innerHTML='<div class="admin-empty">Nenhum agendamento encontrado.</div>';
-    return;
-  }
-  el.innerHTML=entries.map(entry=>`
-    <article class="admin-booking-row">
-      <div class="admin-booking-head">
-        <div>
-          <div class="admin-booking-name">${entry.name || 'Cliente'}</div>
-          <div class="admin-booking-meta">${formatAdminDate(entry.date)} · ${entry.slot}</div>
-        </div>
-        <span class="admin-status-pill status-${entry.status}">${entry.status}</span>
-      </div>
-      <div class="admin-booking-service">${entry.service || 'Serviço não informado'}</div>
-      <div class="admin-booking-meta"><span>${entry.phone || ''}</span></div>
-      <div class="admin-booking-actions">
-        ${['confirmado','atendimento','finalizado','faltou'].map(status=>`<button type="button" class="admin-action-btn${entry.status===status?' active':''}" data-admin-status="${status}" data-admin-date="${entry.date}" data-admin-slot="${entry.slot}">${status}</button>`).join('')}
-      </div>
-    </article>
-  `).join('');
-}
+function getBookingEntries(){return [];} 
+function renderAdminStats(){const el=document.getElementById('adminStats'); if(el) el.innerHTML='';}
+function renderAdminBookings(){const el=document.getElementById('adminBookingsList'); const count=document.getElementById('adminBookingCount'); if(count) count.textContent='0 agendamentos'; if(el) el.innerHTML='<div class="admin-empty">Nenhum agendamento encontrado.</div>';}
 function renderAdminPanel(){renderAdminStats();renderAdminBookings();}
-function updateBookingStatus(date, slot, status){setBookingStatusValue(date, slot, status);renderAdminPanel();showToast('Status atualizado');}
+function updateBookingStatus(){showToast('Status atualizado');}
 async function forceRefreshAdminBookings(){await loadBookings();renderAdminPanel();}
 function startAdminBookingsPolling(){}
 function stopAdminBookingsPolling(){}
-async function openAdminPanel(){const panel=document.getElementById('painel'); if(!panel)return; panel.classList.add('open'); panel.setAttribute('aria-hidden','false'); document.body.classList.add('admin-open'); updateAdminAccessUI(); if(isAdminAuthenticated()) await forceRefreshAdminBookings(); else renderAdminPanel();}
+async function openAdminPanel(){const panel=document.getElementById('painel'); if(!panel)return; panel.classList.add('open'); panel.setAttribute('aria-hidden','false'); document.body.classList.add('admin-open'); updateAdminAccessUI(); renderAdminPanel();}
 function closeAdminPanel(){const panel=document.getElementById('painel'); if(!panel)return; panel.classList.remove('open'); panel.setAttribute('aria-hidden','true'); document.body.classList.remove('admin-open');}
-async function handleAdminLogin(){const email=document.getElementById('adminEmail')?.value.trim(); const password=document.getElementById('adminPassword')?.value || ''; if(!email||!password){showToast('Informe login e senha');return;} try{await signInAdmin(email,password);updateAdminAccessUI();await forceRefreshAdminBookings();showToast('Painel liberado');}catch(e){showToast('Login inválido');}}
+async function handleAdminLogin(){const email=document.getElementById('adminEmail')?.value.trim(); const password=document.getElementById('adminPassword')?.value || ''; if(!email||!password){showToast('Informe login e senha');return;} try{await signInAdmin(email,password);updateAdminAccessUI();renderAdminPanel();showToast('Painel liberado');}catch(e){showToast('Login inválido');}}
 function logoutAdmin(){clearAdminSession();updateAdminAccessUI();closeAdminPanel();showToast('Sessão encerrada');}
 // cart and checkout removed
 
@@ -2607,13 +2218,11 @@ function logoutAdmin(){clearAdminSession();updateAdminAccessUI();closeAdminPanel
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const today=new Date();today.setHours(0,0,0,0);
 const STORAGE_KEY = 'corte_fino_bookings_v3';
-const SUPABASE_URL = 'https://rwizrvzemlqioirxdxqg.supabase.co';
+const SUPABASE_URL = 'https://rwizrvzemlqioirxdxqg.supabase.co/rest/v1/';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ3aXpydnplbWxxaW9pcnhkeHFnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg5NTk2NDEsImV4cCI6MjA5NDUzNTY0MX0.j531O0MTI7D-tJfrnv7a5d9ADNokqcUwZHKmPq0wq1k';
 const SUPABASE_BOOKINGS_TABLE = 'bookings';
 let bookings = {};
 let storageReady = false;
-let supabaseOnline = false;
-let supabaseLastError = '';
 function todayStr(){return new Date().toISOString().slice(0,10);}
 function getSupabaseUrl(){return String(SUPABASE_URL||'').trim().replace(/\/+$/,'');}
 function isSupabaseUrl(value){return /^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(String(value||'').trim());}
@@ -2636,7 +2245,7 @@ function bookingsFromRows(rows){
 async function readSupabaseBookings(){
   const url = `${getSupabaseUrl()}/rest/v1/${SUPABASE_BOOKINGS_TABLE}?select=booking_date,slot,name,phone,service,created_at&booking_date=gte.${todayStr()}&order=booking_date.asc,slot.asc`;
   const r = await fetch(url,{headers:supabaseHeaders()});
-  if(!r.ok) throw new Error(`Falha ao ler Supabase (${r.status}): ${await r.text()}`);
+  if(!r.ok) throw new Error('Falha ao ler Supabase');
   return bookingsFromRows(await r.json());
 }
 async function insertSupabaseBooking(dateStr,slot,data){
@@ -2646,34 +2255,27 @@ async function insertSupabaseBooking(dateStr,slot,data){
     body:JSON.stringify({booking_date:dateStr,slot,name:data.name||'',phone:data.phone||'',service:data.service||''})
   });
   if(r.status===409) return {ok:false,conflict:true};
-  if(!r.ok) throw new Error(`Falha ao salvar Supabase (${r.status}): ${await r.text()}`);
+  if(!r.ok) throw new Error('Falha ao salvar Supabase');
   return {ok:true};
 }
 async function readStoredBookings(){
   if(!hasSupabaseConfig()){
-    supabaseOnline = false;
-    supabaseLastError = 'Project URL ou anon key ausente';
     setSyncStatus('offline','Configure Project URL do Supabase');
     return readLocalBookings();
   }
   try{
     setSyncStatus('syncing','Sincronizando Supabase');
     const remote = await readSupabaseBookings();
-    supabaseOnline = true;
-    supabaseLastError = '';
     writeLocalBookings(remote);
     return remote;
   }catch(e){
-    supabaseOnline = false;
-    supabaseLastError = e?.message || 'Supabase indisponível';
-    console.error(supabaseLastError);
-    setSyncStatus('offline',supabaseLastError.slice(0,90));
+    setSyncStatus('offline','Supabase indisponível');
     return readLocalBookings();
   }
 }
 async function writeStoredBookings(data){writeLocalBookings(data);}
 function purgeOldDates(data){const today=todayStr();const cleaned={};Object.keys(data||{}).forEach(date=>{if(date>=today)cleaned[date]=data[date];});return cleaned;}
-async function loadBookings(){bookings=purgeOldDates(await readStoredBookings());storageReady=true;if(supabaseOnline)setSyncStatus('synced','Supabase conectado');}
+async function loadBookings(){bookings=purgeOldDates(await readStoredBookings());storageReady=true;setSyncStatus('synced','Horários carregados');}
 function isSlotTaken(dateStr,slot){return !!(bookings[dateStr]&&bookings[dateStr][slot]);}
 function isSlotExpired(dateStr,slot){const now=new Date();const slotDate=new Date(`${dateStr}T${slot}:00`);return slotDate<now;}
 function slotUnavailableMessage(dateStr,slot){return isSlotExpired(dateStr,slot)?'Horário encerrado para hoje':'Horário já reservado';}
@@ -2684,10 +2286,7 @@ async function reserveBooking(dateStr,slot,data){
       const result = await insertSupabaseBooking(dateStr,slot,data);
       if(!result.ok) return result;
     }catch(e){
-      supabaseOnline = false;
-      supabaseLastError = e?.message || 'Erro no Supabase';
-      console.error(supabaseLastError);
-      setSyncStatus('offline',supabaseLastError.slice(0,90));
+      setSyncStatus('offline','Erro no Supabase');
       return {ok:false,error:e};
     }
   }
@@ -2701,7 +2300,7 @@ function readJSONStorage(key,fallback){try{return JSON.parse(localStorage.getIte
 function writeJSONStorage(key,value){localStorage.setItem(key,JSON.stringify(value));}
 const MONTHS=['Janeiro','Fevereiro','Marco','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
 const DAYS_PT=['Dom','Seg','Ter','Qua','Qui','Sex','Sab'];
-const ALL_SLOTS=['09:00','09:30','10:00','10:30','11:00','11:30','12:00','12:30','13:00','13:30','14:00','14:30','15:00','15:30','16:00','16:30','17:00','17:30','18:00','18:30','19:00'];
+const ALL_SLOTS=['08:00','08:30','09:00','09:30','10:00','10:30','11:00','11:30','13:00','13:30','14:00','14:30','15:00','15:30','16:00','16:30','17:00','17:30','18:00','18:30'];
 
 let selDate=null,selSlot=null,mainY=today.getFullYear(),mainM=today.getMonth();
 let selDateM=null,selSlotM=null,modY=today.getFullYear(),modM=today.getMonth();
@@ -2816,7 +2415,7 @@ function renderSlots(dateStr,areaId,onSel,y,m,d,silent=false){
   // Guarda o slot selecionado atualmente para re-selecionar após refresh
   const currentSelected = areaId==='slotsArea' ? selSlot : selSlotM;
 
-  const max='19:00';
+  const isSat=new Date(y,m,d).getDay()===6;const max=isSat ? '17:00' : '19:00';
   const slots=ALL_SLOTS.filter(s=>s<=max);
 
   const grid=document.createElement('div');grid.className='slots-grid';
@@ -2879,10 +2478,6 @@ async function confirmBooking(){
       renderBookingResume('main');
       return;
     }
-    if(!result.ok){
-      showToast(supabaseLastError || 'Erro ao salvar no Supabase',5000);
-      return;
-    }
   } catch (err) {
     console.error(err);
     showToast('Erro ao salvar agendamento. Tente novamente.',3500);
@@ -2935,10 +2530,6 @@ async function confirmBookingModal(){
       await refreshAndRenderSlots(selDateM,'slotsAreaM',onSlotMod,+pts[0],+pts[1]-1,+pts[2]);
       selSlotM=null;
       renderBookingResume('modal');
-      return;
-    }
-    if(!result.ok){
-      showToast(supabaseLastError || 'Erro ao salvar no Supabase',5000);
       return;
     }
   } catch (err) {
@@ -3035,11 +2626,6 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
-
-
-
-
-
 
 
 
