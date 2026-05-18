@@ -16,6 +16,8 @@ alter table public.bookings enable row level security;
 grant usage on schema public to anon;
 grant select, insert on public.bookings to anon;
 grant usage, select on sequence public.bookings_id_seq to anon;
+grant usage on schema public to authenticated;
+grant select, delete on public.bookings to authenticated;
 
 drop policy if exists "public_can_read_bookings" on public.bookings;
 create policy "public_can_read_bookings"
@@ -30,6 +32,13 @@ on public.bookings
 for insert
 to anon
 with check (true);
+
+drop policy if exists "authenticated_can_delete_bookings" on public.bookings;
+create policy "authenticated_can_delete_bookings"
+on public.bookings
+for delete
+to authenticated
+using (true);
 
 update public.bookings
 set service = split_part(service, ' | ', 1)
