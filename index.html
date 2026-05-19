@@ -209,13 +209,20 @@ section{padding:100px 5%;}
 .cal-label{font-family:var(--sans);font-size:.62rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:10px;font-weight:500;}
 .cal-label::before{content:'';width:16px;height:1px;background:var(--gold-dim);}
 #calendar{background:var(--black-4);border:1px solid var(--gold-border);}
+#calendar,
+#calendarModal,
+.booking-grid > *,
+.modal-grid > *{
+  min-width:0;
+  max-width:100%;
+}
 .cal-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:var(--black-5);border-bottom:1px solid var(--gold-border);}
 .cal-month{font-family:var(--display);font-size:1.1rem;letter-spacing:3px;color:var(--white);font-weight:600;}
 .cal-nav{background:none;border:1px solid var(--gold-border);color:var(--gold);width:30px;height:30px;cursor:pointer;font-size:.9rem;transition:all .2s;display:flex;align-items:center;justify-content:center;}
 .cal-nav:hover{background:var(--gold);border-color:var(--gold);color:var(--black);}
-.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);}
-.cal-weekday{text-align:center;padding:10px 4px 8px;font-family:var(--sans);font-size:.56rem;letter-spacing:2px;text-transform:uppercase;color:var(--white-dim);border-bottom:1px solid var(--gold-border);font-weight:400;}
-.cal-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:.8rem;cursor:pointer;transition:all .2s;position:relative;font-weight:300;}
+.cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;padding:8px;box-sizing:border-box;width:100%;}
+.cal-weekday{text-align:center;padding:10px 4px 8px;font-family:var(--sans);font-size:clamp(.44rem,1.7vw,.56rem);letter-spacing:clamp(.04em,.45vw,.2em);text-transform:uppercase;color:var(--white-dim);border-bottom:1px solid var(--gold-border);font-weight:400;min-width:0;}
+.cal-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:clamp(.7rem,2.2vw,.8rem);cursor:pointer;transition:all .2s;position:relative;font-weight:300;min-width:0;}
 .cal-day.empty,.cal-day.past{cursor:default;opacity:.15;}
 .cal-day.sunday{opacity:.15;cursor:not-allowed;}
 .cal-day.today{color:var(--gold);}
@@ -941,6 +948,7 @@ nav.scrolled{
   text-transform:uppercase;
 }
 #calendar,#calendarModal{
+  width:100%;
   border-radius:30px;
   overflow:hidden;
   background:
@@ -957,8 +965,8 @@ nav.scrolled{
   height:34px;
 }
 .cal-day{
-  border-radius:18px;
-  margin:4px;
+  border-radius:clamp(8px,3vw,18px);
+  margin:0;
 }
 .slot-empty{
   border-radius:24px;
@@ -1429,6 +1437,12 @@ footer{
   .badge-float{position:relative;top:auto;right:auto;display:inline-block;margin-top:16px;}
 }
 @media(max-width:500px){
+  #calendar,#calendarModal{border-radius:22px;}
+  .cal-header{padding:14px 12px;}
+  .cal-month{font-size:.92rem;letter-spacing:1.4px;text-align:center;}
+  .cal-grid{gap:2px;padding:6px;}
+  .cal-weekday{font-size:.48rem;letter-spacing:.9px;padding:8px 0 6px;}
+  .cal-day{border-radius:10px;font-size:.74rem;}
   .slots-grid{grid-template-columns:repeat(2,1fr);}
   .form-row{grid-template-columns:1fr;}
   .hero-stats{grid-template-columns:1fr;}
@@ -1456,6 +1470,13 @@ footer{
   .hero-seal-mark{flex-shrink:0;}
   .hr-deco{justify-content:center;}
   .hr-line{min-width:100px;}
+}
+@media(max-width:360px){
+  section{padding-left:4%;padding-right:4%;}
+  .modal{padding:18px 12px;}
+  .cal-header{padding:12px 8px;}
+  .cal-grid{gap:1px;padding:4px;}
+  .cal-nav{width:30px;height:30px;}
 }
 
 /* Corte Fino 2026 identity rebuild */
@@ -2099,6 +2120,8 @@ const ADMIN_SESSION_STORAGE_KEY = 'corte_fino_admin_session_v1';
 const BOOKING_STATUS_STORAGE_KEY = 'corte_fino_booking_status_v1';
 let bookingStatuses = {};
 let adminStateLoaded = false;
+let adminBookingsPolling = null;
+const ADMIN_BOOKINGS_POLL_MS = 15000;
 const SERVICES = {
   'degrade':{name:'Corte Degradê',price:35,time:'~45 min',desc:'Degradê limpo, transição suave e acabamento alinhado.',image:'degrade.jpeg'},
   'corte-barba':{name:'Corte + Barba',price:55,time:'~60 min',desc:'Corte completo com barba modelada, navalha e finalização.',image:'corte + barba .jpeg'},
@@ -2323,12 +2346,24 @@ async function forceRefreshAdminBookings(showMessage=true){
   renderAdminPanel();
   if(showMessage!==false) showToast('Agenda atualizada');
 }
-function startAdminBookingsPolling(){}
-function stopAdminBookingsPolling(){}
-async function openAdminPanel(){const panel=document.getElementById('painel'); if(!panel)return; panel.classList.add('open'); panel.setAttribute('aria-hidden','false'); document.body.classList.add('admin-open'); updateAdminAccessUI(); loadAdminState(); if(isAdminAuthenticated()) await forceRefreshAdminBookings(false); else renderAdminPanel();}
-function closeAdminPanel(){const panel=document.getElementById('painel'); if(!panel)return; panel.classList.remove('open'); panel.setAttribute('aria-hidden','true'); document.body.classList.remove('admin-open');}
-async function handleAdminLogin(){const email=document.getElementById('adminEmail')?.value.trim(); const password=document.getElementById('adminPassword')?.value || ''; if(!email||!password){showToast('Informe login e senha');return;} try{await signInAdmin(email,password);updateAdminAccessUI();renderAdminPanel();showToast('Painel liberado');}catch(e){showToast('Login inválido');}}
-function logoutAdmin(){clearAdminSession();updateAdminAccessUI();closeAdminPanel();showToast('Sessão encerrada');}
+function startAdminBookingsPolling(){
+  stopAdminBookingsPolling();
+  if(!isAdminAuthenticated()) return;
+  adminBookingsPolling = setInterval(async()=>{
+    if(!document.getElementById('painel')?.classList.contains('open')) return;
+    try{await forceRefreshAdminBookings(false);}catch(e){}
+  },ADMIN_BOOKINGS_POLL_MS);
+}
+function stopAdminBookingsPolling(){
+  if(adminBookingsPolling){
+    clearInterval(adminBookingsPolling);
+    adminBookingsPolling = null;
+  }
+}
+async function openAdminPanel(){const panel=document.getElementById('painel'); if(!panel)return; panel.classList.add('open'); panel.setAttribute('aria-hidden','false'); document.body.classList.add('admin-open'); updateAdminAccessUI(); loadAdminState(); if(isAdminAuthenticated()){await forceRefreshAdminBookings(false);startAdminBookingsPolling();} else {stopAdminBookingsPolling();renderAdminPanel();}}
+function closeAdminPanel(){const panel=document.getElementById('painel'); if(!panel)return; panel.classList.remove('open'); panel.setAttribute('aria-hidden','true'); document.body.classList.remove('admin-open'); stopAdminBookingsPolling();}
+async function handleAdminLogin(){const email=document.getElementById('adminEmail')?.value.trim(); const password=document.getElementById('adminPassword')?.value || ''; if(!email||!password){showToast('Informe login e senha');return;} try{await signInAdmin(email,password);updateAdminAccessUI();await forceRefreshAdminBookings(false);startAdminBookingsPolling();showToast('Painel liberado');}catch(e){showToast('Login inválido');}}
+function logoutAdmin(){stopAdminBookingsPolling();clearAdminSession();updateAdminAccessUI();closeAdminPanel();showToast('Sessão encerrada');}
 // cart and checkout removed
 
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
